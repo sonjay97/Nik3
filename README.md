@@ -1,5 +1,5 @@
 # Nike App
-A fullstack project where I create a clone of a very popular running shoe's app. 
+A fullstack project of the Nike app.
 
 ## NikeFrontend
 Ever wondered what the frontend of a Nike app would look like? Me neither. Check it out here anyway under the 'ui' branch. Uses React Native and Redux.
