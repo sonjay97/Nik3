@@ -1,34 +1,47 @@
 import { Text, FlatList, View, StyleSheet, Pressable } from 'react-native';
 import CartListItem from '../components/CartListItem';
-import {useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+    selectDeliveryPrice,
+    selectSubtotal,
+    selectTotal,
+    cartSlice,
+} from '../store/cartSlice'
 
 
-const ShoppingCartTotals = () => (
-    <View style={styles.totalsContainer}>
-        <View style={styles.row}>
-            <Text style={styles.text}>Subtotal</Text>
-            <Text style={styles.text}>
-                410.00 US$
-            </Text>
+const ShoppingCartTotals = () => {
+    const subtotal = useSelector(selectSubtotal);
+    const deliveryFee = useSelector(selectDeliveryPrice);
+    const total = useSelector(selectTotal);
+
+
+    return (
+        <View style={styles.totalsContainer}>
+            <View style={styles.row}>
+                <Text style={styles.text}>Subtotal</Text>
+                <Text style={styles.text}>
+                    {subtotal} US$
+                </Text>
+            </View>
+            <View style={styles.row}>
+                <Text style={styles.text}>Delivery</Text>
+                <Text style={styles.text}>
+                    {deliveryFee} US$
+                </Text>
+            </View>
+            <View style={styles.row}>
+                <Text style={styles.textBold}>Total</Text>
+                <Text style={styles.text}>{total} US$</Text>
+            </View>
         </View>
-        <View style={styles.row}>
-            <Text style={styles.text}>Delivery</Text>
-            <Text style={styles.text}>
-                10.00 US$
-            </Text>
-        </View>
-        <View style={styles.row}>
-            <Text style={styles.textBold}>Total</Text>
-            <Text style={styles.text}>
-                420.00 US$
-            </Text>
-        </View>
-    </View>
-    
-)
+    ); 
+};
 
 const ShoppingCart = () => {
+
+
     const cartItems = useSelector((state) => state.cart.items);
+
     return (
         <>
             <FlatList
