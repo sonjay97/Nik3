@@ -1,8 +1,8 @@
-# Nike App
-A fullstack project of the Nike app.
+# Nik3 App
+A fullstack shoe shopping application
 
-## NikeFrontend
-Ever wondered what the frontend of a Nike app would look like? Me neither. Check it out here anyway under the 'ui' branch. Uses React Native and Redux.
+## Nik3 Frontend
+Frontend created with React Native. Implements Redux Global State Management. Uses Redux Toolkit Query to query the Nik3 API and retrieve data. Implemented payment methods with the Stripe API. 
 
-## NikeBackend
-Ever wondered what the backend logic of the Nike app looks like? Me neither. Check it out under the 'main' branch. Features API logic made with Node.JS that interfaces with MongoDB.
+## Nik3 Backend
+API Logic made with NodeJS. Connected to MongoDB, where all the shoe information is held. 
