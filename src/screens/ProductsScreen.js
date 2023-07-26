@@ -30,7 +30,7 @@ const ProductsScreen = ({ navigation }) => {
           // update selected products
           dispatch(productsSlice.actions.setSelectedProduct(item.id));
 
-          navigation.navigate('Product Details', { id: item.id});
+          navigation.navigate('Product Details', { id: item._id});
         }}
           style={styles.itemContainer}>
           <Image source={{ uri: item.image }} style={styles.image} />
